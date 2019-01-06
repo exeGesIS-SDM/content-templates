@@ -1,0 +1,14 @@
+﻿@model InlineScriptViewModel
+@{
+    //this is so when we render to string we only get the partial content
+    Layout = "_LayoutEmpty";
+}
+<div class="content-top ">
+    @Html.Raw(Model.MainContent)
+</div>
+@if(!string.IsNullOrWhiteSpace(Model.InlineScriptBlock))
+{
+    <script>
+         @Html.Raw(Model.InlineScriptBlock)
+    </script>
+}
